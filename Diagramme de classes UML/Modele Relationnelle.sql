@@ -7,8 +7,8 @@
 
 CREATE TABLE "Bien" (
     "BienID" int   NOT NULL,
-    "TypeLocal" string   NOT NULL,
-    "Address" string   NOT NULL,
+    "TypeLocal" int   NOT NULL,
+    "Address" int   NOT NULL,
     "SurfaceReelle" int   NOT NULL,
     "SurfaceTerrain" int   NOT NULL,
     "NombrePieces" int   NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE "Bien" (
 
 CREATE TABLE "TypeLocal" (
     "TypeLocalID" int   NOT NULL,
-    "Type" string   NOT NULL,
+    "Type" varchar   NOT NULL,
     CONSTRAINT "pk_TypeLocal" PRIMARY KEY (
         "TypeLocalID"
      )
@@ -27,11 +27,11 @@ CREATE TABLE "TypeLocal" (
 
 CREATE TABLE "Adresse" (
     "AdresseID" int   NOT NULL,
-    "NumeroRue" string   NOT NULL,
-    "Voie" string   NOT NULL,
-    "Commune" string   NOT NULL,
-    "Departement" string   NOT NULL,
-    "Region" string   NOT NULL,
+    "NumeroRue" varchar   NOT NULL,
+    "Voie" int   NOT NULL,
+    "Commune" int   NOT NULL,
+    "Departement" int   NOT NULL,
+    "Region" int   NOT NULL,
     CONSTRAINT "pk_Adresse" PRIMARY KEY (
         "AdresseID"
      )
@@ -39,9 +39,9 @@ CREATE TABLE "Adresse" (
 
 CREATE TABLE "Transaction" (
     "TransactionID" int   NOT NULL,
-    "NatureMutation" string   NOT NULL,
+    "NatureMutation" int   NOT NULL,
     "Valeur" int   NOT NULL,
-    "Bien" string   NOT NULL,
+    "Bien" int   NOT NULL,
     CONSTRAINT "pk_Transaction" PRIMARY KEY (
         "TransactionID"
      )
@@ -49,7 +49,7 @@ CREATE TABLE "Transaction" (
 
 CREATE TABLE "NatureMutation" (
     "NatureMutationID" int   NOT NULL,
-    "NatureMutation" string   NOT NULL,
+    "NatureMutation" varchar   NOT NULL,
     CONSTRAINT "pk_NatureMutation" PRIMARY KEY (
         "NatureMutationID"
      )
@@ -57,7 +57,7 @@ CREATE TABLE "NatureMutation" (
 
 CREATE TABLE "Voie" (
     "VoieID" int   NOT NULL,
-    "Voie" string   NOT NULL,
+    "Voie" varchar   NOT NULL,
     CONSTRAINT "pk_Voie" PRIMARY KEY (
         "VoieID"
      )
@@ -65,7 +65,7 @@ CREATE TABLE "Voie" (
 
 CREATE TABLE "Commune" (
     "CommuneID" int   NOT NULL,
-    "Commune" string   NOT NULL,
+    "Commune" varchar   NOT NULL,
     CONSTRAINT "pk_Commune" PRIMARY KEY (
         "CommuneID"
      )
@@ -73,7 +73,7 @@ CREATE TABLE "Commune" (
 
 CREATE TABLE "Departement" (
     "DepartementID" int   NOT NULL,
-    "Departement" string   NOT NULL,
+    "Departement" varchar   NOT NULL,
     "Population0a19" int   NOT NULL,
     "Population20a39" int   NOT NULL,
     "Population40a59" int   NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE "Departement" (
 
 CREATE TABLE "Region" (
     "RegionID" int   NOT NULL,
-    "Region" string   NOT NULL,
+    "Region" varchar   NOT NULL,
     CONSTRAINT "pk_Region" PRIMARY KEY (
         "RegionID"
      )
