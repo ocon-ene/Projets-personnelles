@@ -49,6 +49,7 @@ CREATE TABLE "Transaction" (
 
 CREATE TABLE "NatureMutation" (
     "NatureMutationID" int   NOT NULL,
+    "DateMutation" date   NOT NULL,
     "NatureMutation" varchar   NOT NULL,
     CONSTRAINT "pk_NatureMutation" PRIMARY KEY (
         "NatureMutationID"
